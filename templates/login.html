@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    {% block main %}
+    <form method="post">
+        {% csrf_token %}
+        <h1>Username</h1>
+        <input type="text" name="username">
+        <h1>Password</h1>
+        <input type="password" name="password">
+        <p><button type="submit">Login</button></p>
+    </form>
+    {% endblock %}
+    <p>Status: </p>
+    {{ status }}
+    {% if userlist %}
+        <table>
+            <thead>
+                <th>Username</th>
+                <th>Password</th>
+            </thead>
+            {% for i in userlist %}
+            <tr>
+                <td>{{ i.username }}</td>
+                <td>{{ i.password }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h4>No Database Found!</h4>
+    {% endif %}
+
+</body>
+</html>
