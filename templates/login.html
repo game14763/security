@@ -15,9 +15,8 @@
         <p><button type="submit">Login</button></p>
     </form>
     {% endblock %}
-    <p>Status: </p>
-    {{ status }}
-    {% if userlist %}
+    <p>Status: {{ status }}</p>
+    <p>{% if userlist %}</p>
         <table>
             <thead>
                 <th>Username</th>

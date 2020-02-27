@@ -14,12 +14,13 @@ def LoginView(request):
         return render(request, 'login.html')
     '''
     userlist = Login.objects.raw('SELECT * FROM login')
-    status = 'Not Login'
+    status = 'Waiting for login'
     if request.method == 'POST':
+        status = 'Incorrect Username or Password!'
         input_username = request.POST.get('username')
         input_password = request.POST.get('password')
         account = Login.objects.raw("SELECT * FROM login WHERE username='" + input_username + "' AND password='" + input_password + "'")
         for i in account:
-            status = "Login Success"
+            status = "Login Successful!"
     my_dict = {'userlist': userlist, 'status': status}
     return render(request, 'login.html', context=my_dict)

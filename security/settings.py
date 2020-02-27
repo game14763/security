@@ -26,7 +26,7 @@ SECRET_KEY = 'pi+g+^0jyjrl@10zwwmwe42yt%rhy)2m!@1cq6=#t4ti=m%=+n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['salty-ridge-40985.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
